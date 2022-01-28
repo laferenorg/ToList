@@ -1,0 +1,9 @@
+﻿  File.cpp
+  Font.cpp
+  Controller.cpp
+  Log.cpp
+  Core.cpp
+  Vital.cpp
+F:\ToList\Core\src\Vital.cpp(64,19): warning C4018: '>': signed/unsigned mismatch
+  Generating Code...
+  Core.vcxproj -> F:\ToList\Debug\Core.lib

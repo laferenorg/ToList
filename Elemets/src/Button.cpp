@@ -5,6 +5,7 @@
 
 // Include SDL2
 #include <SDL.h>
+#include <SDL_shape.h>
 
 // Include header
 #include "../include/Box.h"

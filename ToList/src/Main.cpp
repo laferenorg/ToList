@@ -18,9 +18,10 @@
 Main::Main(Controller* pController)
 	: controller(pController) {
 	// Intialize core
-	this->core = new Core("Todo List", { 640, 480 },
+	this->core = new Core("Todo List", { 800, 600 },
 		{ SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED }, 
 		SDL_WINDOW_SHOWN);
+	SDL_SetWindowResizable(this->core->window, SDL_TRUE);
 
 	// Intialize stoage variable
 	this->storage = new std::Storage;
@@ -28,14 +29,7 @@ Main::Main(Controller* pController)
 
 // Start function is used for setup from class Main
 void Main::Start() {
-	// Add button
-	Button* button = new Button(this->core, this->controller, Button::Type::DEFAULT,
-		20, 20, 105, 50, 
-		new Text(this->core, "Hello, World",
-			{ 0, 0, 0, 0 }, 20, 20, TEXT_AUTO_SIZE, TEXT_AUTO_SIZE, 12),
-		{ 45, 212, 191, 0 }, { 0, 0, 0, 0xFF }, 
-		2, 2);
-	this->storage->add<Button*>(button);
+
 }
 
 // Event function is used for handle event from class Main
@@ -66,9 +60,11 @@ void Main::Event() {
 	}
 }
 
+int direction = 1;
+
 // Update function is used for logic from class Main
 void Main::Update() {
-	
+
 }
 
 // Render function is used for rende from class Main
@@ -82,8 +78,7 @@ void Main::Render() {
 	BEGIN_RENDER(this->core->render)
 
 		// Somthing to render
-		// render button
-		(*this->storage->get<Button*>(0))->Render();
+
 
 		
 	// End to render
